@@ -1,0 +1,37 @@
+[
+  {
+    "name": "学歴",
+    "histories": [
+      {
+        "year": 1999,
+        "month": 3,
+        "detail": "x市立 y中学校 卒業"
+      },
+      {
+        "year": 1999,
+        "month": 4,
+        "detail": "x県立 z高等学校 入学"
+      },
+      {
+        "year": 2002,
+        "month": 3,
+        "detail": "x県立 z高等学校 卒業"
+      }
+    ]
+  },
+  {
+    "name": "職歴",
+    "histories": [
+      {
+        "year": 2002,
+        "month": 4,
+        "detail": "株式会社a 入社"
+      },
+      {
+        "year": 2009,
+        "month": 12,
+        "detail": "株式会社a 一身上の都合により退職"
+      }
+    ]
+  }
+]

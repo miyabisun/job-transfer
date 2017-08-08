@@ -1,0 +1,11 @@
+{
+  "name": "就活 太郎",
+  "name_kana": "しゅうかつ たろう",
+  "birthday": "1983-04-05",
+  "sex": "男",
+  "zip_code": "123-4567",
+  "address": "東京都 A区 1-2",
+  "address_kana": "とうきょうと えーく",
+  "phone": "090-1234-5678",
+  "mail": "mail@example.com"
+}

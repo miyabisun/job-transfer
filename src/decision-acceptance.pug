@@ -1,0 +1,59 @@
+doctype
+html
+  head
+    title decision-acceptance
+    style!= css
+  body
+    article.accompanying-letter
+      header
+        P.company= target.name
+        p.charge #{target.charge}様
+        ul.personal-data
+          li 氏名：#{personal.name}
+          li 住所：〒#{personal.zip_code}
+          li #{personal.address}
+          li 電話：#{personal.phone}
+          li E-mail：#{personal.mail}
+
+      section
+        h1 書類送付のお知らせ
+        p.beginning-with 拝啓
+        p
+          | #{seasonal_greetings[now.format("M")]}、貴社におかれましては益々ご清祥のこととお慶び申し上げます。
+          br
+          | この度は、採用内定の通知をいただきまして、誠にありがとうございました。
+          br
+          br
+          | つきましては、ご指示をいただいた下記の書類を送付致しますので、ご査収の程よろしくお願い申し上げます。
+          br
+          br
+          | まだまだ判らない事ばかりで至らぬ点も多々ありますが、ご指導の程お願い申し上げます。
+        p.sincerely-yours 敬具
+
+      footer
+        h1 記
+        ul
+          each item in target.items
+            li #{item}　1部
+        .end 以上
+
+    article.decision-acceptance
+      header
+        p.title #{target.name} 御中
+        p.date #{now.format("YYYY年 M月 D日")}
+      section
+        h1 内定承諾書
+        p
+          | このたび私は、貴社からの『内定通知書』をお受けしました。
+          br
+          br
+          | つきましては、提示された条件で貴社に勤務することを承諾し、署名捺印のうえ本状を提出いたします。
+          br
+          | 正当な理由無く上記に反する行動を取ることはありません。
+        table
+          tr
+            td 住　所
+            td &nbsp;
+          tr
+            td 氏　名
+            td.seal 印

@@ -1,0 +1,21 @@
+{
+  "name": "job-transfer",
+  "version": "1.0.0",
+  "description": "日本では**JIS Z 8303「帳票の設計基準」の附属書A**として定義されている。",
+  "main": "index.js",
+  "scripts": {
+    "start": "lsc bin/serve.ls",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.15.3",
+    "livescript": "^1.5.0",
+    "moment": "^2.18.1",
+    "prelude-ls": "^1.1.2",
+    "pug": "^2.0.0-rc.2",
+    "stylus": "^0.54.5"
+  }
+}

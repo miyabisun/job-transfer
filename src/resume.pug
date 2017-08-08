@@ -1,0 +1,107 @@
+doctype
+html
+  head
+    title resume
+    style!= css
+  body
+    header
+      h1 履　歴　書
+      p.date #{now.format("YYYY年 M月 D日")}現在
+
+    section.personal
+      table
+        tr: td.kana(colspan="2")
+          dl
+            dt ふりがな
+            dd= personal.name_kana
+        tr: td.name(colspan="2")
+          dl
+            dt 氏　　名
+            dd= personal.name
+        tr
+          td.birthday #{birthday.format("YYYY年　M月　D日生")}　（満　#{now.diff(birthday, "years")}歳）
+          td.sex 性別　#{personal.sex}
+      img.photo(src!=photo)
+
+    table.home
+      tr: td.kana
+        dl
+          dt ふりがな
+          dd= personal.address_kana
+      tr: td.address
+        dl
+          dt 現住所
+          dd
+            | 〒#{personal.zip_code}
+            br
+            | #{personal.address}
+      tr: td.phone
+        dl
+          dt 電号(携帯)
+          dd= personal.phone
+      tr: td.mail
+        dl
+          dt 電子メール
+          dd= personal.mail
+
+    table.history
+      thead
+        th.year 年
+        th.month 月
+        th.detail 学　歴　・　職　歴
+      tbody
+        each histories_by_episode in histories
+          tr
+            td.year &nbsp;
+            td.month &nbsp;
+            td.name= histories_by_episode.name
+          each history in histories_by_episode.histories
+            tr
+              td.year= history.year
+              td.month= history.month
+              td.detail= history.detail
+          tr
+            td.year &nbsp;
+            td.month &nbsp;
+            td.detail &nbsp;
+
+    table.license
+      thead
+        th.year 年
+        th.month 月
+        th.detail 免　許・資　格
+      tbody
+        each license in licenses
+          tr
+            td.year= license.year
+            td.month= license.month
+            td.detail= license.name
+        - for (var x = 0; x < (10 - licenses.length); x++)
+          tr
+            td.year &nbsp;
+            td.month &nbsp;
+            td.detail &nbsp;
+
+    section.pr
+      h1 自己PR
+      ul
+        each pr in requests.PR
+          li= pr
+
+    table.company
+      tr: td.reasons
+        h1 志望の動機
+        ul
+          each reason in requests.reasons
+            li= reason
+      tr: td.commuting-time
+        dl
+          dt 通勤時間
+          dd= requests.commuting_time
+
+    section.request
+      h1 本人の希望（給料、職種、勤務時間、勤務地など）
+      ul
+        each request in requests.requests
+          li= request
+
